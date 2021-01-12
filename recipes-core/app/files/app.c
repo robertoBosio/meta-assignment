@@ -44,7 +44,7 @@ int main(int argc, char **argv){
         return( 1 );
     }
     
-    printf("To terminate the app type ctrl-C");
+    printf("To terminate the app type ctrl-C\n");
     
     //Uses function manager to handle SIGINT signal
     signal(SIGINT, manager);
@@ -98,7 +98,7 @@ void* readThread(void* par){
     
     sem_post(&readyFlag);
 
-    return;
+    return NULL;
 }
 
 void fft( complex *v, int n, complex *tmp ){
@@ -175,5 +175,5 @@ void* calcThread(void *par){
         
     };
     
-    return;
+    return NULL;
 }
